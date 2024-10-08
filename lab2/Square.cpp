@@ -11,3 +11,5 @@ void Square::calculateArea() {
   float p = a * a;
   setArea(p);
 }
+
+void Square::obliczObwod() { setObwod(4 * a); }

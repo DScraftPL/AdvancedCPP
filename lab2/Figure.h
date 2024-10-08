@@ -3,6 +3,7 @@
 class Figure {
 private:
   float area;
+  float obwod;
 
 public:
   Figure();
@@ -11,5 +12,7 @@ public:
   void setArea(float area1);
   virtual void calculateArea() = 0;
   void show();
+  virtual void obliczObwod() = 0;
+  void setObwod(float _obwod);
 };
 #endif // FIGURE_H_INCLUDED

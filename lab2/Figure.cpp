@@ -8,3 +8,4 @@ Figure::~Figure() {
 float Figure::getArea() { return area; }
 void Figure::setArea(float area1) { area = area1; }
 void Figure::show() { cout << "Pole: " << area << endl; }
+void Figure::setObwod(float _obwod) { obwod = _obwod; }

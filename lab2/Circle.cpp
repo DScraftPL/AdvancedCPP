@@ -11,3 +11,5 @@ void Circle::calculateArea() {
   float p = 3.14 * r * r;
   setArea(p);
 }
+
+void Circle::obliczObwod() { setObwod(44.0 / 7.0 * r); }

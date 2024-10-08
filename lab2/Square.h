@@ -9,5 +9,6 @@ public:
   Square(float a1);
   ~Square();
   virtual void calculateArea() override;
+  virtual void obliczObwod() override;
 };
 #endif // SQUARE_H_INCLUDED

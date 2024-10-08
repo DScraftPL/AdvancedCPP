@@ -1,0 +1,108 @@
+szlak mnie ten teges trafi
+
+konsultacje mailowo
+
+test na koniec
+na kartkach
+wielokrotny
+
+wyklad 10 gdzies wczesniej, bo lambda
+
+bez przepisywania na razie
+
+podstawowe pojęcia obiektowego
+sposob pisania programów OOP
+
+problem => klasa z metodami => obiekty 
+program == praca na obiektach, powiązanych związkami
+
+obiekt ma określony zestaw zachowań
+
+Abstrakcja - skupić sie na rozwiązaniu problemu
+Hermetyzacja - blokowanie dostępu
+Dziedziczenie - 
+
+Raz zddefiniowana klasa, wiele razy wykorzystana
+
+klasa jest typem, podobny do struktury
+pola i metody łączymy w jedną całość
+
+deklaracja klasy - z jakich składowych sie składa (pola, metody i z których użytkownik możę skorzystać)
+definicja klasy - implementacja metod klasy
+
+interfejs - ...
+
+klasy konkretne - typy wbudowane, odpoweidniki ich
+klasy abstrakcyjne - czysty interfejs do klas potomnych, metody bez implementacji
+
+public wszedzie, protected tylko w potomnych, private tylko dla klasy
+zaprzyjazione? friend - cos zewnętrznego, widzą co jest w private
+
+domyslnie prywatne C++
+
+statyczne - przypisane do klasy, nie obiektu, wspolny element
+atrybut identyczny dla wszystkich obiektów
+
+konstruktor z listą inicjalizacyjną
+
+accessory - metody dostępowe do pól set i get
+pole -> 2 metody 
+
+Konstrutor kopiujący -> kopiowanie obiektów const className& s, przypisuje to co z obiektu s do nowego. 
+
+#dyrektywa preprocesora
+#define MAKRO
+
+statyczne pole musi być redefiniowane pozaklasą, chyba trzeba
+
+//xD tablice znakowe,, str_cpyXDDDDDD
+
+przeciążanie operatorów pogu
+
+klasy wyliczeniowe,
+
+enum class Color {red, blue, green}; 0,1,2
+Color col = Color::red; <- git gud, 
+
+w abstrakcyjnej interfejs, który bedziemy wykorzystywać
+
+virutal int size() const=0; <- abstrakcyjna
+
+nie da sie utworzyć obiektu, ale można użyć klasę potomn, która pochodzi z intefejsu za pomocą use ? 
+
+override (opcjonalne), przeciążą funkcje
+
+funkcja stała const; wewnątrz nie można zmienić atrybutów, są do odczytu
+przeciążenie konstruktorów
+
+konstruktor nie tworzy obiektów, tworzy je środowisko
+konstruktor jest uruchamiany, może inicjalizować, klika -> przeciążone
+
+klasa(int p1=1, int p2=2) -> WARTOŚCI DOMYŚLNE WWWWWWWWWWW
+
+konstruktor przenoszący? przenoszenie danych??
+kopiujący kopiuje dane
+delegatowy (C++11) wywoływanie równorzędnego konstruktora,
+
+klasa(int x): pole(x) {}; <- konstruktor parametrowy
+klasa() : pole(5) <- konsturktor domyślny uruchamia delegata, którym jest konstruktor parametrowy
+
+przenoszenie vs kopiowanie, np. przenoszący zmienia tylko adresy początkowe tablic (xD)
+
+z = x - kopiujący
+y = std::move(x) - przenoszący
+
+Destruktor
+wyjscie z bloku
+nie zwalnia pamieci, nie likwiduje obiektu, sprząta po obiekcie
+
+przeciązanie funkcji - definiowanie wielu funkcji o tej samej nazwie, inne parametry
+
+przesłanianie nazw - pola, pola w klasie takie same jak zmienne lokalne
+
+nazwaKlasy::nazwa -- pole w klasie
+nazwa -- pole lokalne
+
+nie ma konstruktora, domyślny działa
+
+C++03 //fajna prehistoria heheheheheheheh
