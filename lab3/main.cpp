@@ -1,10 +1,21 @@
 #include "Adding.h"
+#include "Array.h"
 #include "Student.h"
 using namespace std;
 
 template <typename T> void showAll(T *tab[], int n) {
   for (int i = 0; i < n; i++)
     tab[i]->show();
+}
+
+template <typename T> T findMinimum(T *tab, int n) {
+  T minimum = tab[0];
+  for (int i = 1; i < n; i++) {
+    if (tab[i] < minimum) {
+      minimum = tab[i];
+    }
+  }
+  return minimum;
 }
 
 int main() {
@@ -34,5 +45,17 @@ int main() {
     delete arrAdd[i];
   for (int i = 0; i < 2; i++)
     delete arrStu[i];
+  float tablica1[6] = {1.5, 1.4, 3.33, 4.4, 8.6, 7.7};
+  cout << findMinimum(tablica1, 6) << " ";
+  int tablica2[6] = {2, 3, 4, -1, 2, -99};
+  cout << findMinimum(tablica2, 6) << endl;
+  Array<std::string> hello(4);
+  hello.add("hello");
+  hello.add("there");
+  hello.add("general");
+  hello.add("kenobi");
+  hello.show();
+  hello.sort();
+  hello.show();
   return 0;
 }

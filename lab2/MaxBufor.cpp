@@ -9,5 +9,10 @@ double MaxBufor::calculate() {
 }
 
 void MaxBufor::add(int value) {
-  // do this
+  if (getFirst() >= getSize()) {
+    std::cout << "nie ma miejsca w tablicy" << std::endl;
+  } else {
+    setFirst(value);
+    setFirst(getFirst() + 1);
+  }
 }

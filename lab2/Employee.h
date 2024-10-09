@@ -12,7 +12,7 @@ public:
   Employee(std::string _surname, int _age, int _experience, float _salary);
   virtual ~Employee();
   virtual void show();
-  virtual int calculateSalary(int value);
+  virtual int calculateSalary(int value) = 0;
   int ageEmployment();
   std::string getSurname();
   int getAge();

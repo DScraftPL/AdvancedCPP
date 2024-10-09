@@ -3,6 +3,7 @@
 #include <iostream>
 
 class MaxBufor : public Bufor {
+public:
   MaxBufor() : Bufor() {}
   MaxBufor(int _rozmiar) : Bufor(_rozmiar) {}
   virtual double calculate() override;

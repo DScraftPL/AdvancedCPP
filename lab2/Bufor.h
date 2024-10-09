@@ -12,7 +12,7 @@ public:
   Bufor(int _rozmiar);
   virtual ~Bufor();
   virtual void add(int value);
-  virtual double calculate();
+  virtual double calculate() = 0;
   int getIndex() { return ostatni; }
   int getSize() { return rozmiar; }
   int getTab(int i) { return liczby[i]; }

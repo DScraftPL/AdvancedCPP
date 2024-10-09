@@ -4,7 +4,6 @@
 
 class TeamLeader : public Employee {
 public:
-  float calculateBonus(int value);
   virtual int calculateSalary(int value) override;
   virtual void show() override;
   TeamLeader();

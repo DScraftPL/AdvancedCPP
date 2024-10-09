@@ -1,12 +1,9 @@
 #include "Developer.h"
 #include "Employee.h"
 
-float Developer::calculateBonus(int value) {
-  int salary = calculateSalary(value);
-  return value + 0.2 * value * (salary + getExperience());
+int Developer::calculateSalary(int value) {
+  return value + 0.2 * value * (getSalary() + getExperience());
 }
-
-int Developer::calculateSalary(int value) { return value; }
 
 Developer::Developer() : Employee() {}
 

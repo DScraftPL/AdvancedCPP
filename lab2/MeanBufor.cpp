@@ -5,5 +5,5 @@ double MeanBufor::calculate() {
   for (int i = 0; i < getIndex(); i++) {
     sum += getTab(i);
   }
-  return sum / (getIndex() + 1);
+  return sum / (getIndex());
 }
