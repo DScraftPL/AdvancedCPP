@@ -11,7 +11,7 @@ template <typename T> void showAll(T *tab[], int n) {
 template <typename T> T findMinimum(T *tab, int n) {
   T minimum = tab[0];
   for (int i = 1; i < n; i++) {
-    if (tab[i] < minimum) {
+    if (tab[i] > minimum) {
       minimum = tab[i];
     }
   }
@@ -49,13 +49,15 @@ int main() {
   cout << findMinimum(tablica1, 6) << " ";
   int tablica2[6] = {2, 3, 4, -1, 2, -99};
   cout << findMinimum(tablica2, 6) << endl;
-  Array<std::string> hello(4);
-  hello.add("hello");
-  hello.add("there");
-  hello.add("general");
-  hello.add("kenobi");
+  Array<int> hello(5);
+  hello.add(2);
+  hello.add(4);
+  hello.add(-2);
+  hello.add(-10);
+  hello.add(-5);
   hello.show();
   hello.sort();
   hello.show();
+  cout << hello.pos(1);
   return 0;
 }

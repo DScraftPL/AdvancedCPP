@@ -10,10 +10,10 @@
 using namespace std;
 
 int howManyProtectedAnimals(Animal tablica[], int rozmiar) {
-  int counter = 0;
+    int counter = 0;
   for (int i = 0; i < rozmiar; i++) {
-    if (tablica[i].getProtectedAnimal()) {
-      counter++;
+    if   (tablica[i].getProtectedAnimal()) {
+        counter++;
     }
   }
   return counter;
@@ -35,7 +35,7 @@ int howManyCats(Cat tablica[], int rozmiar) {
     for (int j = 0; j < 5; j++) {
       counter += tablica[i].getMice(j);
     }
-  }
+ }
   return counter;
 }
 
@@ -54,8 +54,8 @@ int main() {
   Person *p2;
   Person *p3[3];
   Person **p4;
-  for (int i = 0; i < 3; i++) {
-    p1[i].init("Anna", "Nowak", 20 + i);
+  for (int i = 0; i < 3; i++) { 
+     p1[i].init("Anna", "Nowak", 20 + i);
     p1[i].showInfoPerson();
   }
   p2 = new Person[3];

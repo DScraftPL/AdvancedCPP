@@ -106,3 +106,162 @@ nazwa -- pole lokalne
 nie ma konstruktora, domyślny działa
 
 C++03 //fajna prehistoria heheheheheheheh
+
+auto x : v 
+
+pętla zakresowa 
+for(auto x : v) v = {1,2,3}
+
+int d1 = 2 === int d1 {2} === int d1 = {2} === auto d1 = 2
+
+auto automatycznie dedukuje typ, ogarnia to kompilator
+
+przed konstruktorem explicit, zabrania przypisania jawnej konwersji na typ klasowy
+
+metoda jako default, jezeli klasa nie ma konstruktora to utworzy sie konstruktor bezparametrowy
+
+automatycznie robi sie: domyslny, przypisania, kopiujący
+  ALE jeżeli zrobimy własny konstruktor, to domyślny nie zadziała,
+  aby utworzyc domyslny trzeba albo uwtorzyć go samemu, AlBO klasa() = default
+  klasa () = delete -- kompilator nie wygeneruje metody, tutaj nie wygeneruje domyślnego
+  klasa (const klasa &) = delete - kompilator nie wygeneruje kompiującego
+
+  można zablokować metody
+    void m1(double x)
+    void m1(int x) = delete <- blokada niejawnej konwersji
+
+Obiekt -  zmienna typu klasowego, instancja klasy
+  Tożsamość - ID, nazwa, "uchwyt"
+  Stan - zawartość komórek w obiekcie, zmienny w czasie
+  Sposób zachowania - zbiór operacji na obiekcie, metody
+
+statyczne - przypisane do klasy
+
+Komunikat!
+  obiekty jeżeli między sobą działają, wysyłają sobie komunikaty
+  wywołanie publicznych składowych dla obiektu
+    nazwa obiektu do którego kierujemy
+    nazwa metody
+    parametry
+
+  "obiektowy odpowiednik wywołania funkcji/procedury"
+
+Pracowanie na obiektach
+  przez zmienną
+    klasa obiekt; klasa obiekt(parametry);
+    klasa obiekt = klasa(parametry);
+    obiekt.metoda()
+  przez wskaźnik (adres obiektu)
+    klasa* wsk = new klasa;
+    wsk->metoda();
+    delete wsk;
+  przez referencje "druga nazwa obiektu (?)"
+    klasa obiekt;
+    klasa &ref = obiekt;
+    obiekt.metoda();
+
+funkcja pracuje na referencji - pracuje na oryginale
+funkcj pracuje na zmienne - pracuje na kopii
+
+hermetyzacja, wszystko domyślnie w C++ jest prywatne 
+"ukrywa informacje wrażliwe"
+dane dostępowe za pomocą metod set i get
+
+Hermetyzacja - ogarniczenie dostępu do pól, aby użytkownik nie używał klasy błędnie
+
+Published (?) - graficzne, czasami dostępne, wpływ na komponenty wizualne, ale deprecated AF
+
+KONSTRUKTOR TO METODA KLASY
+FRIEND NIE JEST METODĄ KLASY, to jest coś zewnętrznego, ma dostęp do wszystkich składowych
+  friend to "łamanie" hermetyzacji
+
+Dziedziczenie!
+  Powtórne wykorzystanie kodu, tworzenie klasy na podstawie klas bazowych, utworzonych wcześniej
+  Klasa potomna zawiera wszystko co posiadał przodek, w C++ jest możliwe wielokrotne, od wielu klas
+  Można ułożyć hierarhie
+  Bazowa -> Potomna1 -> Potomna 2
+
+  Dziedziczy się co to jest public i protected, klasa potomna widzi te składniki
+  sekcja prywatna jest dziedziczona, ale nia ma dostępu do niej
+
+  Nie dziedziczy się:
+    konstruktora, przypisanania przeciążonego i destruktora
+    od C++11 można niby odziedziczyć, ale coś tam coś tam
+
+  
+
+Klasa potomka decyduje co przejąć w protected i public
+
+class potomna : public bazowa {};
+
+Public- public w potomku, protected protected
+Protected - public i protected są protected w potomku
+Private - public i protected sa private w potomku
+
+Przeciążanie metod - różnią sie parametrami, mają tą samą nazwę
+Przesłanianie metod - metoda zdefiniowana w przodku zasłania metodę odziedziczoną
+
+Obiekt klasy potomenj zawiera w sobie obiekty klasy bazowej
+  (zdefiniowanie konstruktorów domyślnych i wypisz na ekran, czarna magia!)
+
+using przodek::przodek -- wszystkie konstruktory są porzenoszone
+
+wielokrotne dziediczenie, konstrukcja jak podane, destrukcja odwrotnie
+2 razy nie mozna dziediczyc po tym samym, bo  są problemy
+
+przy potwórzeniu klasy bazowej, obiekt wystąpi wtedy dwa razy, obejść to można z dziedziczeniem virtualnym
+
+konflikty nazw składowych oganrnia operator zasięgu ::
+
+A::x 
+B::x
+inaczej błąd w kompilacji
+
+//pytania na obronie są ogólne, nie z kodu
+//live zientar reacion:(xd):-?.?..:-;
+Polimorfizm
+  wielepostaciowość
+  komunikat wysyłany do obiektu, wymaga podjęcia działania
+
+  przesłanianiae procedór wspólnym sposobem wywołania
+
+  metody virtualne - polimorfizm dynamiczny
+
+  przeciązanie i przesłanianie też jest - polimorfizm statyczny
+
+  virtual - późne wiązanie - przy wykonaniu
+  wczesne wiązanie metod - kompilacja 
+
+  
+Dynamiczny  - virtual przed metode
+  w potomku metoda cały czas jest virtualna
+  nie trzeba override podawać, by zredefiniować
+
+  najwieksze możliwości!
+
+  destrukor wirtualny zawsze posprząta po obiekcie, gdy tworzymy pola dynamiczne
+
+  metody wirtualne zajmują więcej miejsca
+  metody wirtualne nawet w klasie bazowej nie są związane, przesłonięte metody w potomnej, a wywoływane w bazowej przesłonięte zostaną
+
+Specjalizacja klas - związki dziedziczenia
+  Student -> Osoba
+Asocjacja - przyporządkowanie jednego obiektu do drugiego
+
+Szablony - programowanie generyczne, uogólnione
+  wspólny algorytm, niezależny od typów danych
+  szablony funkcji i klasy
+  szablon posiada jako parametr albo typ typ generyczny
+
+  szablony funkcji - mechanizm funkcji na podstawie ktorego tworzona jest rodzina funkcji
+    które można zastosować dla różnych typów
+
+  operator warunkowy warunek ? a : b 
+  parametr szalbonnu <typename T> - uniwersalny typ
+
+  kod źródłowy jest krótszy, ale wykonywalny sie nie zmieni, bo wygeneruje pod to co mu trzeba
+  jawna specjalizacja ma mieć template<> w najnowszym standardzie
+
+Szablon można przeciążyć (ja pierdolsztajn)
+identyczne nazwy funkcji w tym samym zakresie
+
