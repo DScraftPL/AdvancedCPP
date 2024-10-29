@@ -265,3 +265,12 @@ Szablony - programowanie generyczne, uogólnione
 Szablon można przeciążyć (ja pierdolsztajn)
 identyczne nazwy funkcji w tym samym zakresie
 
+szablon klasy może posiadać funkcję spoza szablonu, 
+może być przyjacielem inny szablon klasy,
+mogą być zaprzyjaźnione niezależne szablony
+
+polimorfizm dynamiczny - hierarchia dziedziczenia, metody wirtualne
+przykładlem polimorfizmu statycznego jest szablon czy przeciążanie operatorów
+
+Programowanie generyczne:
+  jego celem jest kod do masowego wykorzystania
