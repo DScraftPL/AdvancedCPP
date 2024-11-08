@@ -72,9 +72,17 @@ int main() {
     s1.insert(i);
     s2.insert(i + 6);
   }
+  for (auto x : s1) {
+    cout << x << " ";
+  }
+  cout << endl;
+  for (auto x : s2) {
+    cout << x << " ";
+  }
+  cout << endl;
   wykluczajaca(s1, s2);
   string str1 = "hello";
-  string str2 = str1 + "p";
+  string str2 = "hepllo";
   cout << roznica(str1, str2) << endl;
   Dictionary slownik;
   slownik.add("hello", "powitanie");
@@ -84,3 +92,6 @@ int main() {
   slownik.show_z_a();
   return 0;
 }
+
+// ostatnie z labow
+//

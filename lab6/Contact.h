@@ -2,10 +2,10 @@
 #include <string>
 
 class Contact {
-private:
+public:
   std::string imie;
   std::string nazwisko;
   int wiek;
-  std::string numer_telefonu;
   std::string ulica;
+  std::string numer_telefonu;
 };
