@@ -30,11 +30,9 @@ private slots:
     void displaySortedCountries();
 
 private:
-    // Data storage
     QVector<QPair<QString, int>> countries;
     QMap<QString, int> countryMap;
 
-    // UI elements
     QLineEdit *countryNameInput;
     QSpinBox *populationInput;
     QLineEdit *rangeFromInput;

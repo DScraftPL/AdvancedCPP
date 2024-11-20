@@ -1,4 +1,3 @@
-// mainwindow.cpp
 #include "mainwindow.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -26,11 +25,9 @@ void MainWindow::setupUI()
     setCentralWidget(mainWidget);
     QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget);
 
-    // Input form section
     QWidget *formWidget = new QWidget;
     QVBoxLayout *formLayout = new QVBoxLayout(formWidget);
 
-    // Make and model input
     QWidget *makeModelWidget = new QWidget;
     QHBoxLayout *makeModelLayout = new QHBoxLayout(makeModelWidget);
     makeInput = new QLineEdit;
@@ -41,7 +38,6 @@ void MainWindow::setupUI()
     makeModelLayout->addWidget(makeInput);
     makeModelLayout->addWidget(modelInput);
 
-    // Year input
     QWidget *yearWidget = new QWidget;
     QHBoxLayout *yearLayout = new QHBoxLayout(yearWidget);
     yearInput = new QLineEdit;
@@ -50,7 +46,6 @@ void MainWindow::setupUI()
     yearLayout->addWidget(yearInput);
     yearLayout->addStretch();
 
-    // VIN input
     QWidget *vinWidget = new QWidget;
     QHBoxLayout *vinLayout = new QHBoxLayout(vinWidget);
     vinInput = new QLineEdit;
@@ -59,11 +54,9 @@ void MainWindow::setupUI()
     vinLayout->addWidget(vinInput);
     vinLayout->addStretch();
 
-    // Add button
     QPushButton *addButton = new QPushButton("Dodaj samochód");
     connect(addButton, &QPushButton::clicked, this, &MainWindow::addCar);
 
-    // Remove car section
     QWidget *removeWidget = new QWidget;
     QHBoxLayout *removeLayout = new QHBoxLayout(removeWidget);
     vinToRemoveInput = new QLineEdit;
@@ -73,7 +66,6 @@ void MainWindow::setupUI()
     removeLayout->addWidget(vinToRemoveInput);
     removeLayout->addWidget(removeButton);
 
-    // Count older cars section
     QWidget *countWidget = new QWidget;
     QHBoxLayout *countLayout = new QHBoxLayout(countWidget);
     yearThresholdInput = new QLineEdit;
@@ -83,7 +75,6 @@ void MainWindow::setupUI()
     countLayout->addWidget(yearThresholdInput);
     countLayout->addWidget(countButton);
 
-    // Sort section
     QWidget *sortWidget = new QWidget;
     QHBoxLayout *sortLayout = new QHBoxLayout(sortWidget);
     sortComboBox = new QComboBox;
@@ -94,7 +85,6 @@ void MainWindow::setupUI()
     sortLayout->addWidget(sortComboBox);
     sortLayout->addWidget(sortButton);
 
-    // Add all sections to form layout
     formLayout->addWidget(makeModelWidget);
     formLayout->addWidget(yearWidget);
     formLayout->addWidget(vinWidget);
@@ -103,13 +93,11 @@ void MainWindow::setupUI()
     formLayout->addWidget(countWidget);
     formLayout->addWidget(sortWidget);
 
-    // Create table
     table = new QTableWidget;
     table->setColumnCount(4);
     table->setHorizontalHeaderLabels({"Marka", "Model", "Rok", "VIN"});
     table->horizontalHeader()->setStretchLastSection(true);
 
-    // Add widgets to main layout
     mainLayout->addWidget(formWidget);
     mainLayout->addWidget(table);
 }

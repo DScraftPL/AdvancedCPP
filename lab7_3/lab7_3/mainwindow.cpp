@@ -14,7 +14,6 @@ void MainWindow::setupUI() {
 
     QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
 
-    // Add country section
     QHBoxLayout *addLayout = new QHBoxLayout();
     countryNameInput = new QLineEdit();
     countryNameInput->setPlaceholderText("Country name");
@@ -25,14 +24,12 @@ void MainWindow::setupUI() {
     addLayout->addWidget(populationInput);
     addLayout->addWidget(addButton);
 
-    // Display options
     QHBoxLayout *displayLayout = new QHBoxLayout();
     QPushButton *displayAllButton = new QPushButton("Display All");
     QPushButton *displayNamesButton = new QPushButton("Display Names Only");
     displayLayout->addWidget(displayAllButton);
     displayLayout->addWidget(displayNamesButton);
 
-    // Range display
     QHBoxLayout *rangeLayout = new QHBoxLayout();
     rangeFromInput = new QLineEdit();
     rangeToInput = new QLineEdit();
@@ -43,7 +40,6 @@ void MainWindow::setupUI() {
     rangeLayout->addWidget(rangeToInput);
     rangeLayout->addWidget(rangeButton);
 
-    // Remove country
     QHBoxLayout *removeLayout = new QHBoxLayout();
     removeCountryInput = new QLineEdit();
     removeCountryInput->setPlaceholderText("Country to remove");
@@ -51,7 +47,6 @@ void MainWindow::setupUI() {
     removeLayout->addWidget(removeCountryInput);
     removeLayout->addWidget(removeButton);
 
-    // Sort options
     QHBoxLayout *sortLayout = new QHBoxLayout();
     sortOrderCombo = new QComboBox();
     sortOrderCombo->addItems({"Ascending", "Descending"});
@@ -59,11 +54,9 @@ void MainWindow::setupUI() {
     sortLayout->addWidget(sortOrderCombo);
     sortLayout->addWidget(sortButton);
 
-    // Output display
     outputDisplay = new QTextEdit();
     outputDisplay->setReadOnly(true);
 
-    // Add all layouts to main layout
     mainLayout->addLayout(addLayout);
     mainLayout->addLayout(displayLayout);
     mainLayout->addLayout(rangeLayout);
@@ -71,7 +64,6 @@ void MainWindow::setupUI() {
     mainLayout->addLayout(sortLayout);
     mainLayout->addWidget(outputDisplay);
 
-    // Connect signals
     connect(addButton, &QPushButton::clicked, this, &MainWindow::addCountry);
     connect(displayAllButton, &QPushButton::clicked, this, &MainWindow::displayCountries);
     connect(displayNamesButton, &QPushButton::clicked, this, &MainWindow::displayCountryNames);

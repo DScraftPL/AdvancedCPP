@@ -100,4 +100,5 @@ int main() {
   boost::fusion::vector<int, double, float, bool, char, int, int, float> vek{
       10, 3.14, 3.14, true, 'c', 0, -5, 7.777};
   mix(vek);
+  cout << typeid(vek).name();
 }

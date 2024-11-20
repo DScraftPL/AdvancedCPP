@@ -25,7 +25,7 @@ bool isPangram(const QString& text) {
 
 // Example usage in main function
 int main() {
-    QString testString = "The quick brown fox jumps over the lazy dog";
+    QString testString = "The quick brown fox jumps over the lazy do";
     if (isPangram(testString)) {
         cout << "The string is a pangram!";
     } else {
