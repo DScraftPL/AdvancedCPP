@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1732102072 source:/home/wiacker/AdvancedCPP/kolos1KacperWiacek/main.cpp
+	<iostream>
+	"Product.h"
+
+1732102398 source:/home/wiacker/AdvancedCPP/kolos1KacperWiacek/src/Product.cpp
+	"Product.h"
+	<iostream>
+
+1732102115 /home/wiacker/AdvancedCPP/kolos1KacperWiacek/include/Product.h
+	<string>
+

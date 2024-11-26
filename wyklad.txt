@@ -274,3 +274,13 @@ przykładlem polimorfizmu statycznego jest szablon czy przeciążanie operatoró
 
 Programowanie generyczne:
   jego celem jest kod do masowego wykorzystania
+
+
+string porownuje na podstawie pierwszych liter
+
+lambdy:
+
+[kopie], (parametry) -> typzwracany { ciało }
+[=] -> wszystkie zmienne w kodzie
+[&] -> wszystkie zmienne jako referencje
+[this] -> pracuej na oryginale 
