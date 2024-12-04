@@ -73,8 +73,13 @@ struct dane {
 
 void zad3_1(vector<dane> odczyt) {
   for (auto o : odczyt) {
-    cout << o.imie << " " << o.nazwisko << " " << o.plec << " " << o.ocena
-         << " " << o.email << endl;
+    if (o.email != "") {
+      cout << setw(10) << o.imie << "\t" << o.nazwisko << "\t" << o.plec << "\t"
+           << o.ocena << "\t" << o.email << endl;
+    } else {
+      cout << setw(10) << o.imie << "\t" << o.nazwisko << "\t" << o.plec << "\t"
+           << o.ocena << "\t" << "-" << endl;
+    }
   }
 }
 void zad3_2(vector<dane> &odczyt) {
@@ -221,7 +226,7 @@ void zad3() {
 }
 
 int main() {
-  // zad1();
+  zad1();
   // zad2();
-  zad3();
+  //  zad3();
 }
