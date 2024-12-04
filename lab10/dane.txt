@@ -1,0 +1,8 @@
+Kacper;Wiacek;70;333333333;exampled@office.com
+Kacper;Wiacek;23;123123123;pollub@pollub.pl
+Kacper;Wiacek;88;123123322;a@biuro.cpp
+Kacper;Wiacek;89;123123321;a@a.pl
+Kacper;Wiacek;55;543543344;insta@gram.pl
+Adam;Abacki;44;997997998;policja@policja.pl
+Adas;Nazwisko-nazwisko;87;765567123;pollub@lublin.pl
+Hello;World;88;732323237;hello@world.com
