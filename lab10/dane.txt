@@ -6,3 +6,4 @@ Kacper;Wiacek;55;543543344;insta@gram.pl
 Adam;Abacki;44;997997998;policja@policja.pl
 Adas;Nazwisko-nazwisko;87;765567123;pollub@lublin.pl
 Hello;World;88;732323237;hello@world.com
+jan;kowalski;30;111111111;a@a.pl
