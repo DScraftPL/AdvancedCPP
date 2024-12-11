@@ -81,8 +81,20 @@ void zad3() {
 }
 
 int main() {
-  zad1();
-  zad2();
-  zad3();
+  int n;
+  do {
+    cin >> n;
+    switch (n) {
+    case 0:
+      zad1();
+      break;
+    case 1:
+      zad2();
+      break;
+    case 2:
+      zad3();
+      break;
+    }
+  } while (n < 3);
   return 0;
 }
