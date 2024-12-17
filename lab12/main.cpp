@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <random>
+#include <tuple>
 #include <vector>
 
 using namespace std;
@@ -80,28 +81,27 @@ void zad1() {
 }
 
 void zad2() {
-  vector<Car *> lista;
-  int k = 1;
-  lista.push_back(new Car("polonez", 1998, 2000));
-  lista.push_back(new Car("fabia", 2002, 3000));
-  lista.push_back(new Car("mały fiat", 1999, 1000));
+  vector<tuple<int, Car *>> lista;
+  lista.push_back(make_tuple(0, new Car("polonez", 1998, 2000)));
+  lista.push_back(make_tuple(1, new Car("fabia", 2002, 3000)));
+  lista.push_back(make_tuple(2, new Car("mały fiat", 1999, 1000)));
   sort(lista.begin(), lista.end(),
-       [](Car *a, Car *b) { return a->getRok() < b->getRok(); });
+       [](tuple<int, Car *> a, tuple<int, Car *> b) {
+         return get<1>(a)->getRok() < get<1>(b)->getRok();
+       });
   cout << "Sortowanie po roku:" << endl;
-  for_each(lista.begin(), lista.end(), [&k](Car *a) {
-    cout << k << " ";
-    k++;
-    a->show();
+  for_each(lista.begin(), lista.end(), [](tuple<int, Car *> a) {
+    cout << get<0>(a) << ": ";
+    get<1>(a)->show();
   });
   cout << endl;
-  k = 1;
-  sort(lista.begin(), lista.end(),
-       [](Car *a, Car *b) { return a->getPoj() < b->getPoj(); });
+  sort(lista.begin(), lista.end(), [](auto a, tuple<int, Car *> b) {
+    return get<1>(a)->getPoj() < get<1>(b)->getPoj();
+  });
   cout << "Sortowanie po pojemnosci:" << endl;
-  for_each(lista.begin(), lista.end(), [&k](Car *a) {
-    cout << k << " ";
-    k++;
-    a->show();
+  for_each(lista.begin(), lista.end(), [](tuple<int, Car *> a) {
+    cout << get<0>(a) << ": ";
+    get<1>(a)->show();
   });
   cout << endl;
 }
@@ -119,7 +119,7 @@ void zad3(vector<string> vec) {
   cout << "maximum: " << *max_element(dlugosci.begin(), dlugosci.end()) << endl;
 }
 
-int main() {
+void test3() {
   vector<string> vek;
   vek.push_back("Witam");
   vek.push_back("halo");
@@ -127,5 +127,22 @@ int main() {
   vek.push_back("bonjour");
   vek.push_back("tak tak to ja");
   zad3(vek);
+}
+
+int main() {
+  int n;
+  cout << "1 - zad1, 2 - zad2, 3 - zad3" << endl;
+  cin >> n;
+  switch (n) {
+  case 1:
+    zad1();
+    break;
+  case 2:
+    zad2();
+    break;
+  case 3:
+    test3();
+    break;
+  }
   return 0;
 }
